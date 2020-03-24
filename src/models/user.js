@@ -10,6 +10,7 @@ const userSchema = new Schema({
 userSchema.methods.encryptP(parameter) password: any { 
  return bcrypt.hashSync(password, bcrypt.genSaltSync(10))
 }
+
 userSchema.methos.comparePassword = function (password){
  return bcrypt.compare(password, this.password);
 };
